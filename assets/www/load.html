@@ -33,25 +33,35 @@
             background: #DDD;
         }
     </style>
-   
+    <script type="text/javascript">
+        window.addEventListener("load", function () {
+            // Set a timeout...<br>
+            setTimeout(function () {
+                // Hide the address bar!<br>
+                window.scrollTo(0, 1);
+            }, 0);
+        });
+    </script>
 </head>
 <body id="stage" class="theme ui-control-active" dir="rtl" style="text-align: center">
-        <div data-role="header" >
+    <div data-role="page" data-theme="a" id="home" data-title="Home" data-add-back-btn="true"
+        data-back-btn-text="חזרה">
+        <div data-role="header" data-position="fixed">
             <p style="font-size: 20px">
                 תעבורה - מחלקת הדלק</p>
         </div>
-        <div data-role="content" data-ajax="true">
+        <div data-role="content">
             <br />
             <br />
             <br />
-            <a href="http://www.taavurad.com/andr" data-rel="dialog" data-ajax="true" style="font-size: 20px;"
+            <a href="http://www.taavurad.com/andr" data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח אספקת דלקים</a>
             <br />
             <br />
             <br />
             <br />
             <br />
-            <a href="http://www.taavurad.com/andrCounter" data-rel="dialog" data-ajax="false" style="font-size: 20px;"
+            <a href="http://www.taavurad.com/andrCounter" data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח מונים</a>
             <br />
             <br />
@@ -59,7 +69,7 @@
             <br />
             <br />
             <a href="http://www.taavurad.com/andrManualReport" data-rel="dialog" style="font-size: 20px;"
-                data-transition="flip" class="btn ui-btn-active large">דווח תדלוקים ידניים</a>
+                data-transition="flip" class="btn ui-btn-active large">דיווח תדלוקים ידניים</a>
         </div>
     </div>
 </body>
