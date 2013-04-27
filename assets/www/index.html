@@ -31,12 +31,13 @@
           function init() {
               document.addEventListener("deviceready", onDeviceReady, false);
               document.addEventListener("backbutton", onBackButton, false);
+              navigator.splashscreen.show();
 
           }
 
 
           function onBackButton() {
-              console.log("onBackButton");
+              navigator.app.exitApp();
           }
 
           function onDeviceReady(e) {
