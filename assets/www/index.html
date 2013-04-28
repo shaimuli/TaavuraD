@@ -61,10 +61,16 @@
   </head>
   <body onLoad="init();" id="stage" class="theme">
     <h1> תעבורה - מחלקת הדלק</h1>
+                 <select name="slider-1" id="slider-1" data-role="slider">
+                    <option value="ru-RU">רוסית</option>
+                    <option value="he-IL">עברית</option>
+                </select>
+    
+
       <br />
             <br />
             <br />
-            <a href="http://delek.taavura.co.il/andr" data-rel="dialog" style="font-size: 20px;"
+            <a  href="http://delek.taavura.co.il/andr" data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח אספקת דלקים</a>
             <br />
             <br />
@@ -78,7 +84,16 @@
             <br />
             <br />
             <br />
-            <a href="http://delek.taavura.co.il/andrManualReport?lang=ru-Ru" data-rel="dialog" style="font-size: 20px;"
+            <a id="link1" href="http://delek.taavura.co.il/andrManualReport" data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח תדלוקים ידניים</a>
   </body>
+
 </html>
+  <script type="text/javascript">
+      $("#slider-1").on('slidestop', function (event) {
+          var slider_value = $("#slider-1").slider().val();
+          alert(slider_value);
+          document.getElementById("link1").setAttribute("href", "?lang=" + slider_value);
+         
+      });
+        </script>
