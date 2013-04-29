@@ -30,21 +30,21 @@
       <br />
             <br />
             <br />
-            <a  href="http://delek.taavura.co.il/andr" data-rel="dialog" style="font-size: 20px;"
+            <a id="lnkandr" href="http://delek.taavura.co.il/andr" data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח אספקת דלקים</a>
             <br />
             <br />
             <br />
             <br />
             <br />
-            <a href="http://delek.taavura.co.il/andrCounter" data-rel="dialog" style="font-size: 20px;"
+            <a id="lnkandrCounter" href="http://delek.taavura.co.il/andrCounter" data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח מונים</a>
             <br />
             <br />
             <br />
             <br />
             <br />
-            <a id="link1" href="http://delek.taavura.co.il/andrManualReport" data-rel="dialog" style="font-size: 20px;"
+            <a id="lnkandrManualReport" href="http://delek.taavura.co.il/andrManualReport" data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח תדלוקים ידניים</a>
     </div>
                 
@@ -65,10 +65,14 @@
             $(this).find('.ui-slider').width(100);
         });
         var slider_value = "";
-        var href1 = $('#link1').attr('href');
+        var hreflnkandr = $('#lnkandr').attr('href');
+        var hreflnkandrCounter = $('#lnkandrCounter').attr('href');
+        var hreflnkandrManualReport = $('#lnkandrManualReport').attr('href');
         $("#slider-1").on('change', function (event) {
             slider_value = $("#slider-1").slider().val();
-            document.getElementById("link1").setAttribute("href", href1 + "?lang=" + slider_value);
+            document.getElementById("lnkandr").setAttribute("href", hreflnkandr + "?lang=" + slider_value);
+            document.getElementById("lnkandrCounter").setAttribute("href", hreflnkandrCounter + "?lang=" + slider_value);
+            document.getElementById("lnkandrManualReport").setAttribute("href", hreflnkandrManualReport + "?lang=" + slider_value);
             $("#slider-1").slider('refresh');
 
         });
