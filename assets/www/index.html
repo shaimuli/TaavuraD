@@ -63,12 +63,27 @@
 
         $(document).on('pageinit', '.ui-page', function () {
             $(this).find('.ui-slider').width(100);
+           
+           
         });
         var slider_value = "";
+
         var hreflnkandr = $('#lnkandr').attr('href');
         var hreflnkandrCounter = $('#lnkandrCounter').attr('href');
         var hreflnkandrManualReport = $('#lnkandrManualReport').attr('href');
         $("#slider-1").on('change', function (event) {
+            slider_value = $("#slider-1").slider().val();
+            if (slider_value != "he-IL")
+             {
+                $("#lnkandr").text("Отчет доставки топлива");
+                $("#lnkandrCounter").text("Отчет доставки топлива");
+                $("#lnkandrManualReport").text("Отчет доставки топлива");
+            }
+            else {
+                $("#lnkandr").text("דווח אספקת דלקים");
+                $("#lnkandrCounter").text("דווח מונים");
+                $("#lnkandrManualReport").text("דווח תדלוקים ידניים");
+            }
             slider_value = $("#slider-1").slider().val();
             document.getElementById("lnkandr").setAttribute("href", hreflnkandr + "?lang=" + slider_value);
             document.getElementById("lnkandrCounter").setAttribute("href", hreflnkandrCounter + "?lang=" + slider_value);
