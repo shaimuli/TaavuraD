@@ -30,21 +30,21 @@
       <br />
             <br />
             <br />
-            <a id="lnkandr" href="http://delek.taavura.co.il/andr" onclick="lnkandr_Click();" data-rel="dialog" style="font-size: 20px;"
+            <a id="lnkandr" href="http://localhost:1630/andr" data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח אספקת דלקים</a>
             <br />
             <br />
             <br />
             <br />
             <br />
-            <a id="lnkandrCounter" href="http://delek.taavura.co.il/andrCounter" onclick="lnkandrCounter_Click();" data-rel="dialog" style="font-size: 20px;"
+            <a id="lnkandrCounter" href="http://localhost:1630/andrCounter" data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח מונים</a>
             <br />
             <br />
             <br />
             <br />
             <br />
-            <a id="lnkandrManualReport" href="http://delek.taavura.co.il/andrManualReport" onclick="lnkandrManualReport_Click();" data-rel="dialog" style="font-size: 20px;"
+            <a id="lnkandrManualReport" href="http://localhost:1630/andrManualReport" data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח תדלוקים ידניים</a>
     </div>
                 
@@ -63,51 +63,20 @@
 
         $(document).on('pageinit', '.ui-page', function () {
             $(this).find('.ui-slider').width(100);
-           
-           
         });
         var slider_value = "";
-
         var hreflnkandr = $('#lnkandr').attr('href');
         var hreflnkandrCounter = $('#lnkandrCounter').attr('href');
         var hreflnkandrManualReport = $('#lnkandrManualReport').attr('href');
         $("#slider-1").on('change', function (event) {
-            slider_value = $("#slider-1").slider().val();
-            if (slider_value != "he-IL")
-             {
-                $("#lnkandr").text("Отчет доставки топлива");
-                $("#lnkandrCounter").text("Отчет доставки топлива");
-                $("#lnkandrManualReport").text("Отчет доставки топлива");
-            }
-            else {
-                $("#lnkandr").text("דווח אספקת דלקים");
-                $("#lnkandrCounter").text("דווח מונים");
-                $("#lnkandrManualReport").text("דווח תדלוקים ידניים");
-            }
-            slider_value = $("#slider-1").slider().val();
+            //slider_value = $("#slider-1").slider().val();
+            slider_value = $(this).find(":selected").text();
             document.getElementById("lnkandr").setAttribute("href", hreflnkandr + "?lang=" + slider_value);
             document.getElementById("lnkandrCounter").setAttribute("href", hreflnkandrCounter + "?lang=" + slider_value);
             document.getElementById("lnkandrManualReport").setAttribute("href", hreflnkandrManualReport + "?lang=" + slider_value);
             $("#slider-1").slider('refresh');
+
         });
-
-        function lnkandr_Click() {
-            var hreflnkandr = $('#lnkandr').attr('href');
-            slider_value = $("#slider-1").slider().val();
-            document.getElementById("lnkandr").setAttribute("href", hreflnkandr + "?lang=" + slider_value);
-        }
-
-        function lnkandrCounter_Click() {
-            var hreflnkandrCounter = $('#lnkandrCounter').attr('href');
-            slider_value = $("#slider-1").slider().val();
-            document.getElementById("lnkandrCounter").setAttribute("href", hreflnkandrCounter + "?lang=" + slider_value);
-        }
-
-        function lnkandrManualReport_Click() {
-            var hreflnkandrManualReport = $('#lnkandrManualReport').attr('href');
-            slider_value = $("#slider-1").slider().val();
-            document.getElementById("lnkandrManualReport").setAttribute("href", hreflnkandrManualReport + "?lang=" + slider_value);
-        }
         </script>
   </body>
 
