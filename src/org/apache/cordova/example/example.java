@@ -19,17 +19,18 @@
 
 package org.apache.cordova.example;
 
-import android.app.Activity;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
-public class cordovaExample extends DroidGap
+public class example extends DroidGap
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        super.loadUrl("file:///android_asset/www/index.html");
+        // Set by <content src="index.html" /> in config.xml
+        super.loadUrl(Config.getStartUrl());
+        //super.loadUrl("file:///android_asset/www/index.html")
     }
 }
 
