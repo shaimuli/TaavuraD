@@ -69,8 +69,8 @@
         var hreflnkandrCounter = $('#lnkandrCounter').attr('href');
         var hreflnkandrManualReport = $('#lnkandrManualReport').attr('href');
         $("#slider-1").on('change', function (event) {
-            //slider_value = $("#slider-1").slider().val();
-            slider_value = $(this).find(":selected").text();
+            slider_value = $("#slider-1").slider().val();
+            //slider_value = $(this).find(":selected").text();
             document.getElementById("lnkandr").setAttribute("href", hreflnkandr + "?lang=" + slider_value);
             document.getElementById("lnkandrCounter").setAttribute("href", hreflnkandrCounter + "?lang=" + slider_value);
             document.getElementById("lnkandrManualReport").setAttribute("href", hreflnkandrManualReport + "?lang=" + slider_value);
