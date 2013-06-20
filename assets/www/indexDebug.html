@@ -30,28 +30,28 @@
       <br />
             <br />
             <br />
-            <a id="lnkandr" href="http://delek.taavura.co.il/andr" onclick="lnkandr_Click();" data-rel="dialog" style="font-size: 20px;"
+            <a id="lnkandr" href="http://localhost:1630/andr" onclick="lnkandr_Click();" data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח אספקת דלקים</a>
             <br />
             <br />
             <br />
             <br />
             <br />
-            <a id="lnkandrCounter" href="http://delek.taavura.co.il/andrCounter" onclick="lnkandrCounter_Click();" data-rel="dialog" style="font-size: 20px;"
+            <a id="lnkandrCounter" href="http://localhost:1630/andrCounter" onclick="lnkandrCounter_Click();" data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח מונים</a>
             <br />
             <br />
             <br />
             <br />
             <br />
-            <a id="lnkandrManualReport" href="http://delek.taavura.co.il/andrManualReport" onclick="lnkandrManualReport_Click();" data-rel="dialog" style="font-size: 20px;"
+            <a id="lnkandrManualReport" href="http://localhost:1630/andrManualReport" onclick="lnkandrManualReport_Click();" data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח תדלוקים ידניים</a>
              <br />
             <br />
             <br />
             <br />
             <br />
-            <a id="A1" href="http://delek.taavura.co.il/andrTechnic"  data-rel="dialog" style="font-size: 20px;"
+            <a id="A1" href="http://localhost:1630/andrTechnic"  data-rel="dialog" style="font-size: 20px;"
                 data-transition="flip" class="btn ui-btn-active large">דווח קריאות שירות</a>
     </div>
                 
@@ -81,7 +81,7 @@
                 $("#lnkandrCounter").text("דווח מונים");
                 $("#lnkandrManualReport").text("דווח תדלוקים ידניים");
             }
-           
+
         });
         var slider_value = "";
 
@@ -90,8 +90,7 @@
         var hreflnkandrManualReport = $('#lnkandrManualReport').attr('href');
         $("#slider-1").on('change', function (event) {
             slider_value = $("#slider-1").slider().val();
-            if (slider_value != "he-IL")
-             {
+            if (slider_value != "he-IL") {
                 $("#lnkandr").text("Отчет доставки топлива");
                 $("#lnkandrCounter").text("Отчет доставки топлива");
                 $("#lnkandrManualReport").text("Отчет доставки топлива");
